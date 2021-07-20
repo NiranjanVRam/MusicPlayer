@@ -88,7 +88,7 @@ async def yplay(_, message: Message):
                 type="query"
                 ysearch=query
         else:
-            d=await message.reply_text("You Didn't gave me anything to play. Send me a audio file or reply /play to an audio file.")
+            d=await message.reply_text("You Didn't give me anything to play. Send me an audio file or reply /play to an audio file.")
             await mp.delete(d)
             await message.delete()
             return
@@ -248,7 +248,7 @@ async def deezer(_, message):
         text = message.text.split(" ", 1)
         query = text[1]
     else:
-        k=await message.reply_text("You Didn't gave me anything to play use /dplay <song name>")
+        k=await message.reply_text("You Didn't give me anything to play use /dplay <song name>")
         await mp.delete(k)
         await message.delete()
         return
@@ -614,7 +614,7 @@ admincmds=["join", "unmute", "mute", "leave", "clean", "vc", "pause", "resume", 
 
 @Client.on_message(filters.command(admincmds) & ~filters.user(ADMINS) & (filters.chat(CHAT) | filters.private))
 async def notforu(_, m: Message):
-    k=await m.reply("Who the hell you are?.")
+    k=await m.reply("Who the hell are you?.")
     await mp.delete(k)
     await m.delete()
 
